@@ -24,7 +24,7 @@ Thumbs.db
 *.log
 
 # 忽略根目录下的 reports 文件夹及其所有内容
-# reports/
+# /reports/
 
 # 忽略根目录下的 tmp 文件夹及其所有内容
-tmp/
+/temp/
