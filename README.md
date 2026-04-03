@@ -56,4 +56,5 @@ streamlit run Eureka.py
 - 👥 Auto Data Analysis
 	![demo](/docs/img/3.data_analysis.png)
 - 📈 Analysis Report
-	![demo](/docs/img/4.analysis_report.png)
+	![demo](/docs/img/4.1analysis_report.png)
+	![demo](/docs/img/4.2analysis_report.png)

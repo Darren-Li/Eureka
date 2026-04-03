@@ -91,7 +91,7 @@ def generate_professional_report(task_id):
     HTML结构必须为：
 
     <div class="chart-container">
-        <img src="data:image/png;base64,{{{{chart_${{record['id']}}_${{idx}}}}}}" class="chart-img"  width="500" height="300" alt="{{{{record.analysis_topic}}}}">
+        <img src="data:image/png;base64,{{{{chart_${{record['id']}}_${{idx}}}}}}" class="chart-img"  width="600" height="400" alt="{{{{record.analysis_topic}}}}">
     </div>
 
     规则：
