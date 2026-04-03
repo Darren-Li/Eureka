@@ -28,7 +28,7 @@ An agent-driven analytics platform that enables users to upload data and define 
 
 ## ⚙️ Installation and Usage
 
-clone the project
+Clone the project
 ```
 git clone https://github.com/Darren-Li/Eureka.git
 cd Eureka
@@ -50,10 +50,10 @@ streamlit run Eureka.py
 - 🎬 Demo Website: https://aha-Eureka.streamlit.app/
 
 - 📂 Data Management
-	- ![demo](/docs/img/1.data_management.png)
+	![demo](/docs/img/1.data_management.png)
 - ⚠️ Configure Your LLMs
-	- ![demo](/docs/img/2.Configure_Your_LLMs.png)
+	![demo](/docs/img/2.Configure_Your_LLMs.png)
 - 👥 Auto Data Analysis
-	- ![demo](/docs/img/3.data_analysis.png.png)
+	![demo](/docs/img/3.data_analysis.png)
 - 📈 Analysis Report
-	- ![demo](/docs/img/4.analysis_report.png)
+	![demo](/docs/img/4.analysis_report.png)

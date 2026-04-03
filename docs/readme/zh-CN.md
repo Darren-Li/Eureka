@@ -27,8 +27,6 @@
 ---
 
 ## ⚙️ 安装和使用
-
-clone the project
 ```
 git clone https://github.com/Darren-Li/Eureka.git
 cd Eureka
@@ -50,15 +48,15 @@ streamlit run Eureka.py
 - 🎬 Demo Website: https://aha-Eureka.streamlit.app/
 
 - 📂 数据管理
-	- ![demo](/docs/img/1.data_management.png)
+	![demo](/docs/img/1.data_management.png)
 - ⚠️ 模型配置
-	- ![demo](/docs/img/2.Configure_Your_LLMs.png)
+	![demo](/docs/img/2.Configure_Your_LLMs.png)
 - 👥 智能分析
-	- ![demo](/docs/img/3.data_analysis.png.png)
+	![demo](/docs/img/3.data_analysis.png)
 - 📈 查看报告
-	- ![demo](/docs/img/4.analysis_report.png)
+	![demo](/docs/img/4.analysis_report.png)
 
-
+### Demo数据及分析参数示例：
 ### Demo1：
 	主题：
 		2026年全球UX工具全景分析
