@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# 虚拟环境
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# 日志
+*.log
+
+# 忽略根目录下的 reports 文件夹及其所有内容
+# /reports/
+
+# 忽略根目录下的 tmp 文件夹及其所有内容
+/tmp/

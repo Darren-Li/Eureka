@@ -1,0 +1,21 @@
+tool_name,research_phase,function_dimension,is_ai_tool,competitive_heat_score,launch_year,platform_type
+UserTesting Insight,发现,用户研究,是,98,2024,Web
+Miro Design,设计,原型设计,是,95,2023,Web/桌面
+Figma Pro,设计,UI设计,是,92,2022,Web
+Lookback,验证,用户测试,否,88,2021,移动/桌面
+Dovetail,发现,定性分析,是,85,2024,Web
+Optimal Workshop,定义,信息架构,否,82,2020,Web
+Adobe XD,设计,原型设计,否,79,2019,桌面/移动
+Hotjar,验证,行为分析,是,76,2022,Web
+UserZoom,发现,用户调研,是,73,2023,Web
+Crazy Egg,验证,热力图分析,否,70,2021,Web
+Axure RP,设计,交互原型,否,68,2020,桌面
+Sketch,设计,UI设计,否,65,2018,桌面
+InVision,设计,原型评审,是,62,2022,Web
+UsabilityHub,验证,易用性测试,否,59,2021,Web
+Loom,发布,用户反馈,是,56,2023,Web
+Notion UX,定义,需求管理,是,53,2024,Web
+Maze,验证,原型测试,是,50,2022,Web
+FigJam,设计,协作设计,是,48,2023,Web
+SurveyMonkey,发现,问卷调研,否,45,2020,Web
+Typeform,发现,表单设计,是,42,2021,Web

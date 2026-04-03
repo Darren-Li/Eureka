@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX 工具市场竞争力与 AI 渗透分析报告</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header .meta-info {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* 导航目录 */
+        .toc {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .toc h3 {
+            margin-bottom: 15px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: var(--primary-color);
+            display: block;
+            padding: 8px 12px;
+            background: #eff6ff;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 分析步骤卡片 */
+        .analysis-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            scroll-margin-top: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .section-topic {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .analysis-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .analysis-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .text-block {
+            padding-right: 10px;
+        }
+
+        .text-block h4 {
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .text-block ul {
+            margin-left: 20px;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+        }
+
+        .text-block li {
+            margin-bottom: 8px;
+        }
+
+        .chart-container {
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--border-color);
+        }
+
+        .chart-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .chart-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* 总结部分 */
+        .summary-section {
+            background: linear-gradient(to right, #ffffff, #f8fafc);
+            border-left: 5px solid var(--success-color);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* 回到顶部按钮 */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            border: none;
+            font-size: 24px;
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 模态框 (图片放大) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 4px;
+        }
+
+        .modal-caption {
+            color: #ccc;
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        /* 打印优化 */
+        @media print {
+            body { background: white; }
+            .container { max-width: 100%; padding: 0; }
+            header { background: none; color: black; box-shadow: none; border: 1px solid #ccc; }
+            .toc, #backToTop { display: none; }
+            .analysis-section { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 报告头部 -->
+        <header>
+            <h1>UX 工具市场竞争力与 AI 渗透分析报告</h1>
+            <div class="meta-info">
+                <span>样本量：20 款工具</span>
+                <span>分析维度：数据质量、相关性、预测模型、价值分群</span>
+                <span>生成时间：2026-03-30</span>
+            </div>
+        </header>
+
+        <!-- 目录 -->
+        <nav class="toc">
+            <h3>分析目录</h3>
+            <ul>
+                <li><a href="#step-39">1. 数据质量与概览</a></li>
+                <li><a href="#step-40">2. 探索性数据分析 (EDA)</a></li>
+                <li><a href="#step-41">3. 预测模型构建</a></li>
+                <li><a href="#step-42">4. 价值分群与标签化</a></li>
+                <li><a href="#step-43">5. 运营策略制定</a></li>
+                <li><a href="#summary">6. 整体总结</a></li>
+            </ul>
+        </nav>
+
+        <!-- 步骤 1: 数据质量 -->
+        <section id="step-39" class="analysis-section">
+            <div class="section-header">
+                <h2 class="section-title">数据质量与概览分析</h2>
+                <span class="section-topic">数据完整性与分布</span>
+            </div>
+            <div class="analysis-content">
+                <div class="text-block">
+                    <h4>📊 核心结论</h4>
+                    <p style="margin-bottom: 15px;">数据完整性极佳，全字段无缺失，样本覆盖 20 款独立工具。分布显示 AI 化工具占比六成，Web 端为主要交付形态，竞争热度集中分布于中高位区间。</p>
+                    
+                    <h4>🔍 数据洞察</h4>
+                    <ul>
+                        <li><strong>数据质量</strong>：7 个核心字段缺失值均为 0，数据洁净度高，无需预处理即可进行分析。</li>
+                        <li><strong>数值分布</strong>：竞争热度均值 69.3（std=17.3），中位数 69.0，分布对称且处于中高水平；发布年份集中在 2020-2023 年（四分位距），体现工具集时效性强。</li>
+                        <li><strong>类别特征</strong>：AI 工具占比 60%，显著高于非 AI 工具；平台类型以 Web 端为主（75%）；研究阶段聚焦“设计”（35%）及“发现/验证”（50%），功能维度高度分散，覆盖 18 个细分领域。</li>
+                    </ul>
+                </div>
+                <div class="chart-block">
+                    <!-- 图表 1 -->
+                    <div class="chart-container">
+                        <img src="data:image/png;base64,{{chart_39_0}}" class="chart-img" alt="数据质量与分布图 1" onclick="openModal(this)">
+                    </div>
+                    <!-- 图表 2 -->
+                    <div class="chart-container" style="margin-top: 15px;">
+                        <img src="data:image/png;base64,{{chart_39_1}}" class="chart-img" alt="数据质量与分布图 2" onclick="openModal(this)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 步骤 2: EDA -->
+        <section id="step-40" class="analysis-section">
+            <div class="section-header">
+                <h2 class="section-title">探索性数据分析 (EDA)</h2>
+                <span class="section-topic">字段间关系与差异</span>
+            </div>
+            <div class="analysis-content">
+                <div class="text-block">
+                    <h4>📊 核心结论</h4>
+                    <p style="margin-bottom: 15px;">设计阶段工具竞争力最强且分布集中，Web 端为 AI 工具核心载体，产品发布年份对竞争力热度无显著影响。</p>
+                    
+                    <h4>🔍 数据洞察</h4>
+                    <ul>
+                        <li><strong>阶段与热度差异</strong>：设计阶段工具样本占比最高（7 例）且平均热度领先（72.7 分）；发现阶段热度波动最大（标准差 24.6），表现两极分化；发布阶段工具热度最低且样本单一（56.0 分）。</li>
+                        <li><strong>AI 工具与平台分布</strong>：Web 端是 AI 工具主要部署平台（集成率 73.3%），桌面端样本均未集成 AI 功能，跨平台工具 AI 渗透率较低。</li>
+                        <li><strong>年份与热度趋势</strong>：发布年份与竞争力热度相关系数仅为 0.15，表明市场热度主要取决于功能场景而非产品新旧程度。</li>
+                    </ul>
+                </div>
+                <div class="chart-block">
+                    <!-- 图表 1 -->
+                    <div class="chart-container">
+                        <img src="data:image/png;base64,{{chart_40_0}}" class="chart-img" alt="EDA 相关性分析" onclick="openModal(this)">
+                    </div>
+                    <!-- 图表 2 -->
+                    <div class="chart-container" style="margin-top: 15px;">
+                        <img src="data:image/png;base64,{{chart_40_1}}" class="chart-img" alt="EDA 阶段分布" onclick="openModal(this)">
+                    </div>
+                    <!-- 图表 3 -->
+                    <div class="chart-container" style="margin-top: 15px;">
+                        <img src="data:image/png;base64,{{chart_40_2}}" class="chart-img" alt="EDA AI 平台交叉" onclick="openModal(this)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 步骤 3: 预测模型 -->
+        <section id="step-41" class="analysis-section">
+            <div class="section-header">
+                <h2 class="section-title">预测模型构建</h2>
+                <span class="section-topic">工具属性与热度预测</span>
+            </div>
+            <div class="analysis-content">
+                <div class="text-block">
+                    <h4>📊 核心结论</h4>
+                    <p style="margin-bottom: 15px;">特征组合具备 AI 属性完美判别力（准确率 100%），但对热度得分解释力有限（R²=0.31）。发布年份与平台类型是热度显著正向驱动，功能属性影响微弱负向。</p>
+                    
+                    <h4>🔍 数据洞察</h4>
+                    <ul>
+                        <li><strong>模型效能</strong>：分类模型强拟合，回归模型残差较大（RMSE≈14.0），表明热度受未纳入变量（如营销、用户体验）影响显著。</li>
+                        <li><strong>驱动因子</strong>：平台编码权重最高（系数 7.24），年份次之（系数 5.35），功能编码呈轻微抑制作用（系数 -1.05）。</li>
+                        <li><strong>业务指引</strong>：新工具及特定平台发布更易获高热度，单纯功能属性叠加无法有效提升热度预测值。</li>
+                    </ul>
+                </div>
+                <div class="chart-block">
+                    <!-- 图表 1 -->
+                    <div class="chart-container">
+                        <img src="data:image/png;base64,{{chart_41_0}}" class="chart-img" alt="预测模型回归分析" onclick="openModal(this)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 步骤 4: 价值分群 -->
+        <section id="step-42" class="analysis-section">
+            <div class="section-header">
+                <h2 class="section-title">价值分群与标签化</h2>
+                <span class="section-topic">工具价值矩阵分群</span>
+            </div>
+            <div class="analysis-content">
+                <div class="text-block">
+                    <h4>📊 核心结论</h4>
+                    <p style="margin-bottom: 15px;">AI 赋能工具已成为高热度市场的主导力量，具备最高竞争得分（86.5）与最新发布年份（2023.0）。然而 AI 赛道呈现显著两极分化，低热度区 AI 工具得分垫底（51.83），表明市场存在大量低效创新。</p>
+                    
+                    <h4>🔍 数据洞察</h4>
+                    <ul>
+                        <li><strong>高价值区 AI 主导</strong>：'High_是'群竞争热度均值 86.5 居首，样本量最大（6 个），且平均发布年份最新（2023.0），验证 AI 为当前核心增长引擎。</li>
+                        <li><strong>传统工具存量稳固</strong>：'High_否'群热度均值 79.75，虽平均发布年份较早（2020.25），仍维持高竞争力，显示成熟非 AI 产品具备用户粘性壁垒。</li>
+                        <li><strong>AI 产品效能分化</strong>：低热度区中，AI 工具得分（51.83）低于非 AI 工具（59.25），反映 AI 赛道供给过剩，大量新产品未能有效转化为市场竞争力。</li>
+                        <li><strong>产品新颖度正向驱动</strong>：同属性下，高热度群组发布年份均晚于低热度群组，表明迭代速度直接影响热度表现。</li>
+                    </ul>
+                </div>
+                <div class="chart-block">
+                    <!-- 图表 1 -->
+                    <div class="chart-container">
+                        <img src="data:image/png;base64,{{chart_42_0}}" class="chart-img" alt="价值分群统计图" onclick="openModal(this)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 步骤 5: 运营策略 -->
+        <section id="step-43" class="analysis-section">
+            <div class="section-header">
+                <h2 class="section-title">运营策略制定</h2>
+                <span class="section-topic">产品发展与市场推广建议</span>
+            </div>
+            <div class="analysis-content">
+                <div class="text-block" style="grid-column: 1 / -1;">
+                    <h4>📊 核心结论</h4>
+                    <p style="margin-bottom: 15px;">建议资源向高价值 AI 工具群倾斜并重点推广，对低价值传统工具实施功能优化或淘汰。同时应关注 2019 年技术栈，以把握市场热度趋势。</p>
+                    
+                    <h4>🔍 数据洞察</h4>
+                    <ul>
+                        <li><strong>价值分化</strong>：高价值 AI 工具群（6 个）平均热度 86.5，显著优于低价值传统工具群（4 个）。</li>
+                        <li><strong>趋势特征</strong>：2019 年发布工具热度居首，表明该技术架构仍具竞争优势。</li>
+                        <li><strong>策略导向</strong>：需执行差异化资源配置，最大化投入产出比。</li>
+                    </ul>
+                    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 6px; margin-top: 15px;">
+                        <strong>💡 具体建议：</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>高价值 AI 工具群 (6 个): 建议资源倾斜，重点推广。平均热度：86.5</li>
+                            <li>低价值传统工具群 (4 个): 建议改进功能或者考虑淘汰。</li>
+                            <li>趋势建议：2019 年发布的工具平均热度最高，建议关注该年份的技术栈。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 整体总结 -->
+        <section id="summary" class="analysis-section summary-section">
+            <div class="section-header">
+                <h2 class="section-title">整体分析总结</h2>
+            </div>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h4>🚀 市场现状</h4>
+                    <p>UX 工具市场正处于 AI 转型的关键期。虽然 AI 工具占据了 60% 的样本量且在高热度区占据主导，但市场呈现明显的两极分化。单纯的"AI 标签”已不足以成为高竞争力的保证，低效的 AI 创新产品正面临严峻挑战。</p>
+                </div>
+                <div class="summary-card">
+                    <h4>🎯 关键驱动</h4>
+                    <p>数据分析表明，<strong>平台类型（Web 端）</strong>和<strong>产品新颖度</strong>是热度的主要驱动力，而功能属性的堆叠对热度提升作用有限。设计阶段和发现/验证阶段的工具最受市场关注。</p>
+                </div>
+                <div class="summary-card">
+                    <h4>💼 战略建议</h4>
+                    <p>建议采取“抓两头”策略：一方面集中资源推广高价值的新一代 AI 工具，利用其高热度优势扩大市场份额；另一方面，对老旧或低效的传统工具进行功能重构或淘汰。同时，不应忽视 2019 年左右成熟技术栈的稳定性价值。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>报告生成时间：2026-03-30 04:17:46 | 数据来源：内部分析数据库</p>
+        </footer>
+    </div>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" title="回到顶部" onclick="scrollToTop()">↑</button>
+
+    <!-- 图片放大模态框 -->
+    <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <span class="close-modal" onclick="closeModalBtn()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <script>
+        // 回到顶部逻辑
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.add("show");
+            } else {
+                backToTopBtn.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 图片放大逻辑
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalCaption = document.getElementById("modalCaption");
+
+        function openModal(imgElement) {
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+            modalCaption.innerHTML = imgElement.alt;
+        }
+
+        function closeModalBtn() {
+            modal.style.display = "none";
+        }
+
+        function closeModal(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // 键盘关闭模态框
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

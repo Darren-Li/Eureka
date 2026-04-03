@@ -1,0 +1,31 @@
+user_id,user_segment,registration_date,age,gender,location,device_type,membership_level,order_id,order_date,product_category,product_id,product_price,quantity,total_amount,discount_applied,payment_method,shipping_time,delivery_status,return_status,customer_rating,purchase_frequency,avg_order_value,last_purchase_date
+U10001,New,2023-01-15,28,Female,New York,Mobile,Premium,O20001,2023-02-05,Electronics,P5001,699.99,1,699.99,Yes,Credit Card,2,Delivered,No,4.8,3,589.99,2023-05-10
+U10002,Loyal,2021-03-22,35,Male,Los Angeles,Desktop,Gold,O20002,2023-02-05,Apparel,P3002,89.99,2,179.98,No,PayPal,3,Delivered,No,4.2,12,145.67,2023-06-18
+U10003,Churned,2022-07-08,42,Female,Chicago,Tablet,Silver,O20003,2023-02-06,Home Goods,P4003,129.99,1,129.99,Yes,Apple Pay,4,Delivered,Yes,2.5,2,110.99,2023-03-01
+U10004,New,2023-02-10,24,Male,Houston,Mobile,Basic,O20004,2023-02-06,Electronics,P5002,499.99,1,499.99,No,Debit Card,2,Delivered,No,4.5,1,499.99,2023-02-06
+U10005,Loyal,2020-11-14,48,Female,Miami,Desktop,Premium,O20005,2023-02-07,Beauty,P2001,59.99,3,179.97,Yes,Credit Card,1,Delivered,No,4.9,18,129.88,2023-06-22
+U10006,Regular,2022-04-30,31,Male,Dallas,Tablet,Gold,O20006,2023-02-07,Apparel,P3003,119.99,2,239.98,No,PayPal,3,Delivered,No,4.3,7,156.72,2023-06-05
+U10007,Churned,2022-09-18,29,Female,Seattle,Mobile,Silver,O20007,2023-02-08,Electronics,P5003,899.99,1,899.99,Yes,Apple Pay,5,Delivered,Yes,3.0,1,899.99,2023-02-08
+U10008,Regular,2021-08-05,36,Male,San Francisco,Desktop,Basic,O20008,2023-02-08,Home Goods,P4004,99.99,4,399.96,No,Debit Card,2,Delivered,No,4.1,5,132.45,2023-05-28
+U10009,New,2023-03-02,25,Female,Boston,Mobile,Premium,O20009,2023-02-09,Beauty,P2002,79.99,2,159.98,Yes,Credit Card,3,Delivered,No,4.7,2,149.99,2023-05-15
+U10010,Loyal,2020-05-20,52,Male,Philadelphia,Desktop,Gold,O20010,2023-02-09,Electronics,P5004,599.99,1,599.99,No,PayPal,2,Delivered,No,4.6,22,189.76,2023-06-30
+U10011,Regular,2022-01-12,33,Female,Atlanta,Tablet,Silver,O20011,2023-02-10,Apparel,P3004,69.99,3,209.97,Yes,Apple Pay,4,Delivered,No,4.4,6,118.33,2023-06-12
+U10012,Churned,2022-10-25,38,Male,Detroit,Mobile,Basic,O20012,2023-02-10,Home Goods,P4005,149.99,1,149.99,No,Debit Card,6,Delivered,Yes,2.8,1,149.99,2023-02-10
+U10013,New,2023-03-18,27,Male,Phoenix,Mobile,Premium,O20013,2023-02-11,Beauty,P2003,49.99,5,249.95,Yes,Credit Card,2,Delivered,No,4.9,1,249.95,2023-02-11
+U10014,Loyal,2021-02-08,45,Female,San Diego,Desktop,Gold,O20014,2023-02-11,Electronics,P5005,799.99,1,799.99,No,PayPal,3,Delivered,No,4.5,16,167.89,2023-06-25
+U10015,Regular,2022-06-30,30,Male,Dallas,Tablet,Silver,O20015,2023-02-12,Apparel,P3005,99.99,2,199.98,Yes,Apple Pay,2,Delivered,No,4.3,8,135.67,2023-06-08
+U10016,Churned,2022-08-14,41,Female,Portland,Mobile,Basic,O20016,2023-02-12,Home Goods,P4006,119.99,1,119.99,No,Debit Card,5,Delivered,Yes,3.2,2,109.99,2023-03-15
+U10017,New,2023-04-05,23,Female,Denver,Mobile,Premium,O20017,2023-02-13,Electronics,P5006,399.99,1,399.99,Yes,Credit Card,3,Delivered,No,4.7,1,399.99,2023-02-13
+U10018,Loyal,2020-09-17,50,Male,Minneapolis,Desktop,Gold,O20018,2023-02-13,Beauty,P2004,69.99,4,279.96,No,PayPal,2,Delivered,No,4.8,19,145.33,2023-06-28
+U10019,Regular,2021-11-23,34,Male,Charlotte,Tablet,Silver,O20019,2023-02-14,Apparel,P3006,129.99,2,259.98,Yes,Apple Pay,4,Delivered,No,4.2,9,152.89,2023-06-19
+U10020,Churned,2022-03-19,37,Female,Indianapolis,Mobile,Basic,O20020,2023-02-14,Home Goods,P4007,139.99,1,139.99,No,Debit Card,7,Delivered,Yes,2.6,1,139.99,2023-02-14
+U10021,New,2023-04-22,26,Male,Las Vegas,Mobile,Premium,O20021,2023-02-15,Electronics,P5007,499.99,1,499.99,Yes,Credit Card,2,Delivered,No,4.6,1,499.99,2023-02-15
+U10022,Loyal,2021-05-11,43,Female,Memphis,Desktop,Gold,O20022,2023-02-15,Beauty,P2005,59.99,3,179.97,No,PayPal,3,Delivered,No,4.4,14,128.76,2023-06-20
+U10023,Regular,2022-07-28,32,Male,Baltimore,Tablet,Silver,O20023,2023-02-16,Apparel,P3007,89.99,4,359.96,Yes,Apple Pay,2,Delivered,No,4.5,7,129.99,2023-06-10
+U10024,Churned,2022-11-30,40,Male,Washington DC,Mobile,Basic,O20024,2023-02-16,Home Goods,P4008,159.99,1,159.99,No,Debit Card,5,Delivered,Yes,3.1,1,159.99,2023-02-16
+U10025,New,2023-05-01,29,Female,San Antonio,Mobile,Premium,O20025,2023-02-17,Electronics,P5008,699.99,1,699.99,Yes,Credit Card,3,Delivered,No,4.9,1,699.99,2023-02-17
+U10026,Loyal,2020-07-04,47,Female,San Jose,Desktop,Gold,O20026,2023-02-17,Beauty,P2006,79.99,2,159.98,No,PayPal,2,Delivered,No,4.7,20,178.99,2023-06-29
+U10027,Regular,2021-08-29,35,Male,Jacksonville,Tablet,Silver,O20027,2023-02-18,Apparel,P3008,109.99,3,329.97,Yes,Apple Pay,4,Delivered,No,4.3,8,146.78,2023-06-15
+U10028,Churned,2022-05-16,39,Female,Columbus,Mobile,Basic,O20028,2023-02-18,Home Goods,P4009,109.99,1,109.99,No,Debit Card,6,Delivered,Yes,2.9,1,109.99,2023-02-18
+U10029,New,2023-05-15,24,Male,Austin,Mobile,Premium,O20029,2023-02-19,Electronics,P5009,599.99,1,599.99,Yes,Credit Card,2,Delivered,No,4.8,1,599.99,2023-02-19
+U10030,Loyal,2020-12-01,51,Male,Fort Worth,Desktop,Gold,O20030,2023-02-19,Beauty,P2007,49.99,5,249.95,No,PayPal,3,Delivered,No,4.6,25,199.87,2023-06-30
