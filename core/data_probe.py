@@ -2,8 +2,15 @@ import pandas as pd
 import numpy as np
 from core.db_manager import get_dataset
 import json
+import os
 
 def auto_probe(file_path: str, dataset_id=None):
+
+    if os.path.exists(file_path):
+            pass
+        else:
+            file_path = file_path.replace("\\", "/")
+
     if file_path.endswith('.csv'):
         df = pd.read_csv(file_path)
     else:

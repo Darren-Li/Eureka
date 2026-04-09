@@ -53,6 +53,13 @@ def execute_code_with_ai(code, probe, task_id):
         write_analysis_step(task_id, step_name, topic, idea, result, interpretation, chart_json)
         return interpretation
 
+    file_path = probe["file_path"]
+
+    if os.path.exists(file_path):
+            pass
+    else:
+        file_path = file_path.replace("\\", "/")
+
     exec_env = {
         "pd": pd,
         "np": np,
@@ -62,7 +69,7 @@ def execute_code_with_ai(code, probe, task_id):
         "json": json,
 
         "probe": probe,
-        "df": pd.read_csv(probe["file_path"]) if probe["file_path"].endswith("csv") else pd.read_excel(probe["file_path"]),
+        "df": pd.read_csv(file_path) if file_path.endswith("csv") else pd.read_excel(file_path),
         "task_id": task_id,
         "save_analysis_step": save_analysis_step
     }
