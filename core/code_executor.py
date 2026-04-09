@@ -56,7 +56,7 @@ def execute_code_with_ai(code, probe, task_id):
     file_path = probe["file_path"]
 
     if os.path.exists(file_path):
-            pass
+        pass
     else:
         file_path = file_path.replace("\\", "/")
 
