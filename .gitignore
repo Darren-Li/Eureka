@@ -26,8 +26,8 @@ Thumbs.db
 # 忽略根目录下的 reports 文件夹及其所有内容
 # /reports/
 
-# 忽略根目录下的 temp 文件夹及其所有内容
-/temp/
+# # 忽略根目录下的 temp 文件夹及其所有内容
+# /temp/
 
-# 但是，不要忽略 .gitkeep 文件（这是为了让文件夹能被上传）
-!temp/.gitkeep
+# # 但是，不要忽略 .gitkeep 文件（这是为了让文件夹能被上传）
+# !temp/.gitkeep
