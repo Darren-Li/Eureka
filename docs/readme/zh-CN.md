@@ -56,6 +56,10 @@ streamlit run Eureka.py
 - 📈 查看报告
 	![demo](/docs/img/4.1analysis_report.png)
 	![demo](/docs/img/4.2analysis_report.png)
+	![demo](/docs/img/4.3analysis_report.png)
+	![demo](/reports/Analysis_Report_task_9c6ac11b3f59.html)
+	![demo](/reports/Analysis_Report_task_057f14e89d3e.html)
+	![demo](/reports/Analysis_Report_task_7fcaee2c31d9.html)
 
 ### Demo数据及分析参数示例：
 ### Demo1：
