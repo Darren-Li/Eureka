@@ -48,10 +48,10 @@ if st.button("开始全自动分析", type="primary"):
         with st.spinner("Step 2/4：生成分析代码(Python)..."):
             code = generate_analysis_code(plan, probe, dataset['file_path'], task_id, error_text)
 
-            # 保存代码
-            code_path = os.path.join("temp", f"analysis_code_{task_id}.py")
-            with open(code_path, "w", encoding="utf-8") as f:
-                f.write(code)
+            # # 保存代码
+            # code_path = os.path.join("temp", f"analysis_code_{task_id}.py")
+            # with open(code_path, "w", encoding="utf-8") as f:
+            #     f.write(code)
 
             with st.expander("💻 Step2.1：分析代码", expanded=False):
                 st.code(code, language="python")
