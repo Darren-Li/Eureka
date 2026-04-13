@@ -41,15 +41,16 @@ else:
             c1, c2, c3, c4 = st.columns([3,2,1,1])
             with c1:
                 st.write(f"任务ID：{task['task_id']}")
-                st.write(f"任务名称：{task['name']}")
-            with c2:
                 st.write(f"数据集：{task.get('dataset_name')}")
+            with c2:
                 st.write(f"创建时间：{task['created_at']}")
+                st.write(f"更新时间：{task['updated_at']}")
             
             if c3.button("▶️ 进入分析", key=f"ana_{task['task_id']}"):
                 # 2. 核心：将任务ID存入session_state（跨页面共享）
                 st.session_state["current_task_id"] = task['task_id']  # 自定义key，如current_task_id
                 st.switch_page("pages/4_分析执行.py")
+                
             if task['status'] == "已完成" and task.get('report_path'):
                 report_file = task['report_path']
 
