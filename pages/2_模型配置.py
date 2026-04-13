@@ -15,17 +15,21 @@ PROVIDER_MODELS = {
         "base_url": "https://models.github.ai/inference"
     },
     "openrouter": {
-        "models": ["qwen/qwen3.6-plus:free", "qwen/qwen3-next-80b-a3b-instruct:free", "qwen/qwen3-coder:free", 
+        "models": ["qwen/qwen3-next-80b-a3b-instruct:free", "qwen/qwen3-coder:free", 
                    "z-ai/glm-4.5-air:free",
                    "meta-llama/llama-3.3-70b-instruct:free",
                    "minimax/minimax-m2.5:free", 
-                   "google/gemma-3-27b-it:free"],
+                   "google/gemma-3-27b-it:free",
+                   "nvidia/nemotron-3-super-120b-a12b:free",
+                   "google/gemma-4-31b-it:free",
+                   ],
         "base_url": "https://openrouter.ai/api/v1"
     },
     "aliyun": {
-        "models": ["qwen3.6-plus-2026-04-02", "qwen3.6-plus", "qwen3.5-122b-a10b",
+        "models": ["qwen3.6-plus", "qwen3.5-122b-a10b", "qwen3.5-397b-a17b",
                    "qwen3.5-flash", "qwen3.5-flash-2026-02-23", "qwen3.5-35b-a3b",
-                   "qwen3-coder-next", "glm-5", "kimi-k2.5", "MiniMax-M2.5"],
+                   "qwen3-coder-next", "qwen3-max-2026-01-23",
+                   "glm-5", "kimi-k2.5", "MiniMax-M2.5"],
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1"
     },
     "xiaomi": {

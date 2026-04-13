@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import pandas as pd
 import sqlite3
 from core.task_manager import create_new_task
@@ -35,7 +36,8 @@ if not tasks:
     st.info("还没有任务")
 else:
     for task in tasks:
-        with st.expander(f"{task['name']} ({task['status']})"):
+        spaces = "&nbsp;" * 10
+        with st.expander(f"{task['name']}{spaces}状态：**{task['status']}**"):
             c1, c2, c3, c4 = st.columns([3,2,1,1])
             with c1:
                 st.write(f"任务ID：{task['task_id']}")
@@ -49,5 +51,18 @@ else:
                 st.session_state["current_task_id"] = task['task_id']  # 自定义key，如current_task_id
                 st.switch_page("pages/4_分析执行.py")
             if task['status'] == "已完成" and task.get('report_path'):
-                with open(task['report_path'], "rb") as f:
-                    c4.download_button("⬇️ 下载报告", f, file_name=f"报告_{task['name']}.html")
+                report_file = task['report_path']
+
+                # 检查文件物理路径是否存在
+                if os.path.exists(report_file):
+                    with open(report_file, "rb") as f:
+                        c4.download_button(
+                            label="⬇️ 下载报告",
+                            data=f,
+                            file_name=f"报告_{task['name']}.html",
+                            mime="text/html",
+                            key=f"key_{task['task_id']}"
+                        )
+                else:
+                    # 如果文件不存在，在对应的列或容器中显示警告
+                    c4.warning("⚠️ 报告文件丢失，请重新执行分析")

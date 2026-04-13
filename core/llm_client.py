@@ -46,7 +46,11 @@ def call_llm(prompt: str, temperature=None) -> str:
 def call_llm_code(prompt: str, temperature=None) -> str:
     """编程专用模型调用（可使用不同配置）"""
     config = get_llm_code_config()
-    return _call_llm_internal(config, prompt, temperature)
+    code_text = _call_llm_internal(config, prompt, temperature)
+    # 移除开头的标记
+    code_text = code_text.replace("```python", "").replace("```py", "").replace("```", "")
+    # 移除结尾的标记并去除两端空格
+    return code_text.strip()
 
 
 # # Azure AI Inference SDK方式调用github模型

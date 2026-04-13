@@ -53,8 +53,8 @@ def generate_analysis_code(plan, probe, file_path, task_id, error_text):
    - 优先使用 seaborn
    - 必须设置中文字体（避免乱码）
    - 每张图：
-       - figsize=(9,5)
-       - dpi=120
+       - figsize=(9,6)
+       - dpi=150
    - 保存格式：
        temp/{task_id}_步骤名.png
 
